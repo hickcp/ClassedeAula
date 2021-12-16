@@ -1,4 +1,4 @@
-package com.projeto.Escola.domain.model;
+package com.projeto.escola.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
