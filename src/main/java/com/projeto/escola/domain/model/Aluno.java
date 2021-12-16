@@ -20,4 +20,7 @@ public class Aluno {
     @Column(nullable = false, name = "cpf", length = 50)
     private String cpf;
 
+    @ManyToOne
+    @JoinColumn(name = "id_turma")
+    private Turma turma;
 }

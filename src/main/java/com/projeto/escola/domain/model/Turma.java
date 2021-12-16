@@ -15,6 +15,10 @@ public class Turma {
     @Column(nullable = false, name = "turma", length = 10)
     private String turma;
 
+    @ManyToOne
+    @JoinColumn(name = "id_professor")
+    private Professor professor;
+
     @JsonIgnoreProperties("aluno")
     @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL, orphanRemoval = true) // Indica ao BD que é um (classe) para muitos (alunos)
     private List<Aluno> alunos = new ArrayList<>();
