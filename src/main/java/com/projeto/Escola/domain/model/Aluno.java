@@ -1,4 +1,4 @@
-package com.projeto.ClassedeAula.domain.model;
+package com.projeto.Escola.domain.model;
 
 import javax.persistence.*;
 

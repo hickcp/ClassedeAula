@@ -1,4 +1,4 @@
-package com.projeto.ClassedeAula.domain.model;
+package com.projeto.Escola.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity //Uma entidade (tabela)
-public class Classe {
+public class Turma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Gera automaticamenteo  ID
     private Long id;
