@@ -1,7 +1,5 @@
 package com.projeto.escola.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,18 +7,13 @@ import java.util.List;
 @Entity //Uma entidade (tabela)
 public class Turma {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Gera automaticamenteo  ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "turma", length = 10)
-    private String turma;
+    @Column(nullable = false, name = "serie", length = 50)
+    private String serie;
 
-    @ManyToOne
-    @JoinColumn(name = "id_professor")
-    private Professor professor;
-
-    @JsonIgnoreProperties("aluno")
-    @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL, orphanRemoval = true) // Indica ao BD que é um (classe) para muitos (alunos)
+   @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Aluno> alunos = new ArrayList<>();
 
     public Long getId() {
@@ -31,12 +24,12 @@ public class Turma {
         this.id = id;
     }
 
-    public String getTurma() {
-        return turma;
+    public String getSerie() {
+        return serie;
     }
 
-    public void setTurma(String turma) {
-        this.turma = turma;
+    public void setSerie(String serie) {
+        this.serie = serie;
     }
 
     public List<Aluno> getAlunos() {
@@ -46,6 +39,4 @@ public class Turma {
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }
-
-
 }
