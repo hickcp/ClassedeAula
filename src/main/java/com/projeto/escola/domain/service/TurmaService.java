@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service //Regra de negócio
-public class TurmaService {
+public class TurmaService { //Serviços, onde é construido o get, put, post, etc
     // acesso ao repository
     private TurmaRepository turmaRepository;
 

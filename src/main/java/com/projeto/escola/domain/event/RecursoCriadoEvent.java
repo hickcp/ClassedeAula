@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletResponse;
 public class RecursoCriadoEvent extends ApplicationEvent {
     private static long serialVersionUID = 1L;
 
-    private HttpServletResponse response;
+    private HttpServletResponse response; // varial response do tipo httpservlet
     private Long codigo;
 
 
-    public RecursoCriadoEvent(Object source, HttpServletResponse response, Long codigo){
-        super(source);
+    public RecursoCriadoEvent(Object source, HttpServletResponse response, Long codigo){ //CONSTRUTOR PARA RETORNAR UMA MENSAGEM HTTP.
+        super(source); //classe pai
         this.response = response;
         this.codigo = codigo;
 
