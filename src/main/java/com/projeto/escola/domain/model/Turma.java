@@ -1,5 +1,7 @@
 package com.projeto.escola.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ public class Turma {
 
     @Column(nullable = false, name = "serie", length = 50)
     private String serie;
-
+    @JsonIgnoreProperties("turma")
    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Aluno> alunos = new ArrayList<>();
 

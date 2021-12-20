@@ -11,6 +11,8 @@ public class Aluno {
 
     @Column(nullable = false, name = "nome", length = 50)
     private String nome;
+    @Column(nullable = false, name = "ra", length = 50)
+    private String ra;
 
     @ManyToOne
     @JoinColumn(name = "id_turma")
@@ -31,6 +33,10 @@ public class Aluno {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getRa(){return ra;}
+
+    public void setRa(String ra){this.ra = ra;}
 
     public Turma getTurma() {
         return turma;
