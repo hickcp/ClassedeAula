@@ -10,9 +10,10 @@ public class Aluno {
     private Long id;
 
     @Column(nullable = false, name = "nome", length = 50)
-    private String nome;
+    private String aluno_nome;
+
     @Column(nullable = false, name = "ra", length = 50)
-    private String ra;
+    private String aluno_ra;
 
     @ManyToOne
     @JoinColumn(name = "id_turma")
@@ -26,17 +27,17 @@ public class Aluno {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getAluno_nome() {
+        return aluno_nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setAluno_nome(String aluno_nome) {
+        this.aluno_nome = aluno_nome;
     }
 
-    public String getRa(){return ra;}
+    public String getAluno_ra(){return aluno_ra;}
 
-    public void setRa(String ra){this.ra = ra;}
+    public void setAluno_ra(String aluno_ra){this.aluno_ra = aluno_ra;}
 
     public Turma getTurma() {
         return turma;

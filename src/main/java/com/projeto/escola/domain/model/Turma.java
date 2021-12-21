@@ -14,9 +14,14 @@ public class Turma {
 
     @Column(nullable = false, name = "serie", length = 50)
     private String serie;
+
     @JsonIgnoreProperties("turma")
-   @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true)
+   @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true) // uma turma para muitos alunos
     private List<Aluno> alunos = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "id_atribuicao")
+    private Atribuicao atribuicao;
 
     public Long getId() {
         return id;

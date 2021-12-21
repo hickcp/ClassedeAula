@@ -14,7 +14,7 @@ public class TurmaService { //Serviços, onde é construido o get, put, post, et
     public TurmaService(TurmaRepository turmaRepository){this.turmaRepository = turmaRepository;} //
 
     public Turma salvarTurma(Turma t){ // Salvar tipo Turma, recebe como parametro Turma t
-        t.getAlunos().forEach(a -> a.setTurma(t)); //
+        t.getAlunos().forEach(a -> a.setTurma(t)); //adiciona alunos para a turma T
         return turmaRepository.save(t); // salva
     }
 }

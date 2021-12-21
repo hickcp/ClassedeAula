@@ -30,7 +30,7 @@ public class TurmaController { //Classe publica de controle, onde vão ser coloc
 
 
 
-    @PostMapping("/cadastrar")
+    @PostMapping("/cadastrar") // Com esse post ele já faz o post na Turma no endereco http://localhost:8080/turma/cadastrar
     public ResponseEntity<Turma> salvar(@Validated @RequestBody Turma turma, HttpServletResponse response){
         Turma t = turmaService.salvarTurma(turma); // Grava uma turma no BD
         publisher.publishEvent(new RecursoCriadoEvent(this, response, t.getId()));
